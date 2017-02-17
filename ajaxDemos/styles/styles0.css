@@ -1,0 +1,128 @@
+html {
+  box-sizing: border-box;
+  background: -webkit-radial-gradient(ellipse farthest-corner at center top, #2B2929, #060002);
+  background: radial-gradient(ellipse farthest-corner at center top, #2B2929, #060002);
+  height: 100%;
+  background-attachment: fixed;
+}
+html > *, *:before, *:after {
+  box-sizing: inherit;
+ }
+ body {
+   max-width: 750px;
+   margin: 0 auto;
+   color: white;
+   font-family: 'Cairo', sans-serif;
+   padding: 1em;
+ }
+ header {
+   padding: 7% 7% 7% 0;
+ }
+ h1 {
+   color: greenyellow;
+   font-family: 'Abril Fatface', cursive;
+   letter-spacing: 1px;
+   border: 1px solid greenyellow;
+   padding: 5%;
+ }
+ h3 {
+   color: greenyellow;
+ }
+ .postInfo {
+   font-size: .85em;
+ }
+ a {
+   text-decoration: none;
+   color: greenyellow;
+ }
+ .comments {
+   margin-top: 5%;
+   border-top: 1px solid greenyellow;
+ }
+ .oneComment {
+   background-color: rgba(255, 255, 255, .2);
+   padding: 2%;
+   margin-top: 1%;
+   border-radius: 10px;
+
+ }
+ .commentInfo {
+   font-style: italic;
+   font-size: .85em;
+ }
+/* FORM STUFFS */
+input, textarea, label {
+  display: block;
+  width: 100%;
+  margin: 1% 0;
+  padding: 1%;
+  border-radius: 5px;
+  border: none;
+}
+input[type="submit"] {
+  background-color: greenyellow;
+  border: none;
+  padding: 3%;
+  margin-top:3%;
+  width: 30%;
+}
+
+/* AJAX STYLES FROM TRISH'S DEMO :D*/
+#displayArea {
+  background-color: rgba(255, 255, 255, .3);
+  padding: 1em;
+  margin: 1em 0;
+}
+#displayArea h2 {
+  color: #060002;
+  text-transform: uppercase;
+  font-size: 1.3em;
+}
+article {
+  margin: 1em 0;
+  border-top: solid 1px #060002;
+}
+.loading {
+  background-color: rgba(0, 0, 0, .3);
+}
+.loading:before {
+  content: '...loading';
+}
+/* TABS FOR ZE INTERFACE */
+.tabs {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.tab {
+  display: inline-block;
+  background-color: yellowgreen;
+  color: #060002;
+  cursor: pointer;
+  padding: .2em .5em;
+  border-radius: .5em;
+  margin: .2em .1em;
+}
+.current {
+  background-color: #060002;
+  color: white;
+}
+
+ @media screen and (min-width:500px){
+   main {
+     width: 60%;
+     float:right;
+   }
+   aside {
+     width: 32%;
+     float: left;
+     padding-right: 3%;
+     border-right: 1px solid greenyellow;
+   }
+   footer {
+     clear: both;
+     text-align: center;
+     padding: 5%;
+     width: 100%;
+   }
+ }

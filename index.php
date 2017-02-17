@@ -1,7 +1,9 @@
-<?php require('db_config.php');
+<?php
+//conect to database
+require('db_config.php');
 //use _once on function definitions to prevent duplicates and breakin' yo shit.
-      include_once('functions.php');
-      include('header.php');
+include_once('functions.php');
+include('header.php');
 ?>
     <main>
       <?php
