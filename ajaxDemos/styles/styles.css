@@ -1,0 +1,47 @@
+html {
+  background: -webkit-radial-gradient(ellipse farthest-corner at center top, #2B2929, #060002); background: radial-gradient(ellipse farthest-corner at center top, #2B2929, #060002); height: 100%;
+}
+body {
+  color: white;
+  font-family: sans-serif;
+}
+#displayArea {
+  background-color: rgba(255, 255, 255, .3);
+  padding: 1em;
+  margin: 1em 0;
+}
+#displayArea h2 {
+  color: #060002;
+  text-transform: uppercase;
+  font-size: 1.3em;
+}
+article {
+  margin: 1em 0;
+  border-top: solid 1px #060002;
+}
+.loading {
+  background-color: rgba(0, 0, 0, .3);
+}
+.loading:before {
+  content: '...loading';
+}
+
+/* TABS FOR ZE INTERFACE */
+.tabs {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.tab {
+  display: inline-block;
+  background-color: yellowgreen;
+  color: #060002;
+  cursor: pointer;
+  padding: .2em .5em;
+  border-radius: .5em;
+  margin: .2em .1em;
+}
+.current {
+  background-color: #060002;
+  color: white;
+}

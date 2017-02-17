@@ -1,0 +1,83 @@
+html {
+  box-sizing: border-box;
+  background: -webkit-radial-gradient(ellipse farthest-corner at center top, #2B2929, #060002);
+  background: radial-gradient(ellipse farthest-corner at center top, #2B2929, #060002);
+  height: 100%;
+  background-attachment: fixed;
+}
+html > *, *:before, *:after {
+  box-sizing: inherit;
+ }
+ body {
+   max-width: 750px;
+   margin: 0 auto;
+   color: white;
+   font-family: 'Cairo', sans-serif;
+   padding: 1em;
+ }
+ header {
+   padding: 7% 7% 7% 0;
+ }
+ h1 {
+   color: greenyellow;
+   font-family: 'Abril Fatface', cursive;
+   letter-spacing: 1px;
+   border: 1px solid greenyellow;
+   padding: 5%;
+ }
+ .postInfo {
+   font-size: .85em;
+ }
+ a {
+   text-decoration: none;
+   color: greenyellow;
+ }
+ .comments {
+   margin-top: 5%;
+   border-top: 1px solid greenyellow;
+ }
+ .oneComment {
+   background-color: rgba(255, 255, 255, .2);
+   padding: 2%;
+   margin-top: 1%;
+   border-radius: 10px;
+
+ }
+ .commentInfo {
+   font-style: italic;
+   font-size: .85em;
+ }
+/* FORM STUFFS */
+input, textarea, label {
+  display: block;
+  width: 100%;
+  margin: 1% 0;
+  padding: 1%;
+  border-radius: 5px;
+  border: none;
+}
+input[type="submit"] {
+  background-color: greenyellow;
+  border: none;
+  padding: 3%;
+  margin-top:3%;
+  width: 30%;
+}
+ @media screen and (min-width:500px){
+   main {
+     width: 60%;
+     float:right;
+   }
+   aside {
+     width: 32%;
+     float: left;
+     padding-right: 3%;
+     border-right: 1px solid greenyellow;
+   }
+   footer {
+     clear: both;
+     text-align: center;
+     padding: 5%;
+     width: 100%;
+   }
+ }
