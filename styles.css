@@ -15,6 +15,12 @@ html > *, *:before, *:after {
    font-family: 'Cairo', sans-serif;
    padding: 1em;
  }
+ aside {
+   width: 32%;
+   float: left;
+   padding-right: 3%;
+   border-right: 1px solid greenyellow;
+ }
  header {
    padding: 7% 7% 7% 0;
  }
@@ -24,6 +30,21 @@ html > *, *:before, *:after {
    letter-spacing: 1px;
    border: 1px solid greenyellow;
    padding: 5%;
+ }
+ h2 {
+  margin-top: 0;
+  border-bottom: 1px solid greenyellow;
+  font-family: 'Abril Fatface', cursive;
+  letter-spacing: 1px;
+ }
+ h3 {
+   margin-bottom: 0;
+ }
+ #links h3 {
+   display: inline;
+   padding: 0 3%;
+   border: 1px solid greenyellow;
+   width: 100%;
  }
  .postInfo {
    font-size: .85em;
@@ -63,20 +84,19 @@ input[type="submit"] {
   margin-top:3%;
   width: 30%;
 }
+footer {
+  clear: both;
+  text-align: center;
+  margin-top: 7%;
+  border-top: solid 1px greenyellow;
+}
  @media screen and (min-width:500px){
    main {
      width: 60%;
      float:right;
    }
-   aside {
-     width: 32%;
-     float: left;
-     padding-right: 3%;
-     border-right: 1px solid greenyellow;
-   }
    footer {
-     clear: both;
-     text-align: center;
+
      padding: 5%;
      width: 100%;
    }

@@ -6,6 +6,13 @@ function convert_timestamp($ugly){
   //if echo was not present, it would not be spit out
   return $date->format('l, F, jS, Y');
 }
+//function to convert ugly timestamps for ze RSS :)
+function convert_timeRSS($ugly){
+  $date = new DateTime($ugly);
+  //echo $date->format('l, F, jS, Y');
+  //if echo was not present, it would not be spit out
+  return $date->format('r');
+}
 
 //clean any inputstring
 function clean_string($dirtydata){ //feed it in the field to dump it into the function itself :)

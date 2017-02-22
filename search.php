@@ -52,7 +52,7 @@ $current_page = 1;
            </a>
          </h2>
          <div class="post-info">
-           <?php echo convertTimestamp($row['date']); ?>
+           <?php echo convert_timestamp($row['date']); ?>
          </div>
 
          <p><?php echo $row['body']; ?></p>

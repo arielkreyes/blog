@@ -1,7 +1,24 @@
 
-<aside>
+<aside id="sidebar">
   <section>
-    <h2>Recent Posts</h2>
+    <form action="search.php" method="get">
+      <label for="the_keywords"><h3>Search</h3></label>
+      <input type="search" name="keywords" id="the_keywords" value="<?php echo $keywords ?>" />
+      <input type="submit" value="Go" class="searchButton" />
+    </form>
+  </section>
+  <section>
+    <h3>Navigation</h3>
+      <ul>
+        <li><a href="index.php">Home</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="links.php">Links</a></li>
+        <li><a href="authors.php">Authors</a></li>
+        <li><a href="category.php">Category</a></li>
+      </ul>
+  </section>
+  <section>
+    <h3>Recent Posts</h3>
     <?php
     //get the 5 latest published post titles
     //TODO: make this show the posts that have 0 comments
@@ -31,9 +48,9 @@
     } ?>
   </section>
   <section>
-    <h2>Categories</h2>
+    <h3>Categories</h3>
     <?php //get all category names in alphabetical order
-    $query = "SELECT cat.name, COUNT(*) AS total
+    $query = "SELECT cat.category_id, cat.name, COUNT(*) AS total
               FROM categories AS cat, posts
               WHERE cat.category_id = posts.category_id
               GROUP BY posts.category_id
@@ -47,7 +64,8 @@
       <?php
       //loop it
       while( $row = $result->fetch_assoc()){ ?>
-      <li><?php echo $row['name']; ?> (<?php echo $row['total']; ?>)</li>
+
+      <li><a href="category.php?category_id=<?php echo $row['category_id']; ?>"><?php echo $row['name']; ?></a> (<?php echo $row['total']; ?>)</li>
       <?php }//end of while
       //free after SELECT
       $result->free();
@@ -59,7 +77,7 @@
     } ?>
   </section>
   <section>
-    <h2>Links</h2>
+    <h3><a href="links.php">Links +</a></h3>
     <?php //get all links alphabetical by title
     $query = "SELECT title, url
               FROM links
@@ -72,7 +90,7 @@
       <?php
       //loop it
       while( $row = $result->fetch_assoc()){ ?>
-      <li><a href="<?php echo $row['url'];?>"><?php echo $row['title'];?></a></li>
+      <li><a href="<?php echo $row['url'];?>"  target="_blank"><?php echo $row['title'];?></a></li>
       <?php }//end of while loop
       //free after SELECT
       $result->free();
