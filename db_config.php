@@ -1,4 +1,5 @@
 <?php
+error_reporting( E_ALL & ~E_NOTICE );
 $host = 'localhost';
 $username = 'ariel_blog';
 $password = 'mm3fyVQncEdbrKtE';
@@ -10,3 +11,5 @@ $db = new mysqli( $host, $username, $password, $database );
 if($db->connect_errno > 0){
   die('Cant connect to ze Database. Try again Laters.');
 }
+//hashes and salts for making passwords stronger! >:) keep zis a secret!
+define('SALT', 'aklsefhkasdfjklast9we45t89w3');

@@ -80,7 +80,7 @@ input, textarea, label {
 input[type="submit"] {
   background-color: greenyellow;
   border: none;
-  padding: 3%;
+  padding: 2%;
   margin-top:3%;
   width: 30%;
 }
