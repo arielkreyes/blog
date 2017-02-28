@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 //security check!  If the user does not have a valid key, send them back to the login form
 $user_id = $_SESSION['user_id'];
 $security_key = $_SESSION['security_key'];
@@ -10,8 +10,7 @@ $query = "SELECT *
 			LIMIT 1";
 $result = $db->query($query);
 if( !$result ){
-	//header('Location:../login.php');
-  echo "no result";
+	header('Location:../login.php?e=noresult');
 }
 
 if( $result->num_rows == 1 ){
@@ -21,8 +20,7 @@ if( $result->num_rows == 1 ){
 	define('IS_ADMIN', $row['is_admin']);
 	define('USER_ID', $row['user_id']);
 }else{
-	//header('Location:../login.php');
-  echo "no rows";
+	header('Location:../login.php?e=norows');
 }
 ?>
 <!DOCTYPE html>
@@ -38,7 +36,7 @@ if( $result->num_rows == 1 ){
 	<header role="banner">
   <h1>Admin Panel</h1>
   <ul class="utilities">
-    <li class="users"><a href="#"><?php echo constant('USERNAME'); ?></a></li>
+    <li class="users"><a href="index.php"><?php echo USERNAME; ?></a></li>
     <li class="blog"><a href="../">Back to Blog</a></li>
     <li class="logout warn"><a href="../login.php?action=logout">Log Out</a></li>
   </ul>

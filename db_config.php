@@ -8,7 +8,7 @@ $database = 'ariel_blog';
 $db = new mysqli( $host, $username, $password, $database );
 
 //check to make sure it works!
-if($db->connect_errno > 0){
+if($db->connect_error > 0){
   die('Cant connect to ze Database. Try again Laters.');
 }
 //hashes and salts for making passwords stronger! >:) keep zis a secret!
