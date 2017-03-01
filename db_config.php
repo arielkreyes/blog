@@ -13,3 +13,6 @@ if($db->connect_error > 0){
 }
 //hashes and salts for making passwords stronger! >:) keep zis a secret!
 define('SALT', 'aklsefhkasdfjklast9we45t89w3');
+
+define('ROOT_URL', 'https://localhost/reyesariel/blog/');
+define('ROOT_PATH', 'C:\xampp\htdocs\reyesariel\blog');

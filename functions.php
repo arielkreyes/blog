@@ -43,7 +43,7 @@ function clean_boolean($dirtydata){ //feed it in the field to dump it into the f
  * @param array $errors     A list of any inline field errors
  * @return string           Displays a div containing all the feedback and errors
  */
-function show_feedback($feedback, $errors){
+function show_feedback($feedback, $errors = array()){
   if( isset($feedback)){
     //^ if feedback exists (isset)
     echo '<div class="feedback">';
@@ -123,3 +123,26 @@ function count_posts_by_user($user_id, $is_published = 1 ){
     echo $row['total'];
   }
 }
+/**
+ * display an <img /> for any user's pic at any known size
+ * @return [type] [description]
+ */
+function show_userpic($user_id, $size){
+  global $db;
+  $query = "SELECT userpic, username
+            FROM users
+            WHERE user_id = $user_id
+            LIMIT 1";
+  //run it
+  $result = $db->query($query);
+  if($result->num_rows == 1){
+    //display the image if it exists,otherwise show the default userpic
+    $row = $result->fetch_assoc();
+    if($row['userpic'] != ''){
+      echo '<img src="' . ROOT_URL . 'uploads/' . $row['userpic'] . '_' . $size . '.jpg" class="userpic" alt="' . $row['$username'] . '\'s user pic" />';
+    }//end of if user has img
+    else{
+      echo '<img src="' . ROOT_URL . 'images/default' . $size . '.jpg"  class="userpic" alt="default userpic"/>';
+    }
+  }//end of if result num rows
+}//end of function

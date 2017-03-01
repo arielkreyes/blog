@@ -63,7 +63,7 @@
     <main>
       <?php
       //get the most recent 2 published posts
-      $query = "SELECT posts.title, posts.body, users.username, posts.date
+      $query = "SELECT posts.title, posts.body, users.username, posts.date, users.user_id
                 FROM posts, users
                 WHERE posts.user_id = users.user_id
                 AND posts.is_published = 1
@@ -80,6 +80,7 @@
         <h2><?php echo $row['title']; ?></h2>
         <p><?php echo $row['body']; ?></p>
         <div class="postInfo">
+          <?php show_userpic($row['user_id'], 'small'); ?>
             By <?php echo $row['username']; ?>
             on <?php echo convert_timestamp($row['date']); ?>
         </div>
